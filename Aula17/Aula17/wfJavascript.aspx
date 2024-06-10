@@ -23,7 +23,7 @@
         <div>
             <asp:Literal ID="Literal1" runat="server" Text="&lt;h1&gt;AULAS QUE FALAM SOBRE JAVASCRIPT&lt;h1&gt;"></asp:Literal>
             <asp:Label ID="Label1" runat="server" Text="CUIDADO" onMouseOver="Matar()"></asp:Label>
-            <asp:Button ID="Button1" runat="server" Text="Button" /><br />
+            <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" /><br />
             <asp:HyperLink ID="HyperLink1" runat="server" onClick="aumentarTexto()">++++++++</asp:HyperLink>
             <asp:HyperLink ID="HyperLink2" runat="server" onClick="diminuirTexto()">--------</asp:HyperLink>
             <p id="paragrafo">

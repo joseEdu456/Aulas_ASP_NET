@@ -1,0 +1,28 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="Aula32_MasterPage.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <header>
+        <h1>Topo da Pagina</h1>
+    </header>
+    <form id="form1" runat="server">
+    <menu>
+        <h1>Menu</h1>
+        <asp:Menu ID="Menu1" runat="server" DataSourceID="Web" StaticDisplayLevels="2"></asp:Menu>
+        <asp:SiteMapDataSource ID="Web" runat="server" />
+    </menu>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

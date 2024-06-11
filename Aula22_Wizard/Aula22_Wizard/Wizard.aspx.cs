@@ -11,9 +11,12 @@ namespace Aula22_Wizard
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            // Criando um if para verificar se é primeira que a pagina é carregada
             if (!IsPostBack)
             {
+                //Step que sempre que a pagina for carregada vai ser o step 0
                 Wizard1.ActiveStepIndex = 0;
+                // Fazendo um for para inicializar os numeros tabuada
                 for (int i = 1; i < 11; i++)
                 {
                     ((DropDownList)Wizard1.WizardSteps[1].FindControl("ddlNumeros")).Items.Add(i.ToString());
@@ -28,6 +31,7 @@ namespace Aula22_Wizard
             var idade = ((TextBox)Wizard1.WizardSteps[0].FindControl("txtIdade")).Text;
             var hobby = ((TextBox)Wizard1.WizardSteps[0].FindControl("txtHobby")).Text;
 
+            // Mostrando as variaveis para o usuario
             Response.Write("<h1>Dados da Pessoa</h1>");
             Response.Write($"<p>Nome: {nome}</p>");
             Response.Write($"<p>Idade: {idade}</p>");
@@ -36,6 +40,7 @@ namespace Aula22_Wizard
 
         protected void btnTabuada_Click(object sender, EventArgs e)
         {
+            //Fazendo uma tabela para mostrar a tabuada desejada no step 1
             Table tabela = new Table();
             int n = int.Parse(((DropDownList)Wizard1.WizardSteps[0].FindControl("ddlNumeros")).SelectedItem.Text);
             for (int i = 1; i < 11; i++)

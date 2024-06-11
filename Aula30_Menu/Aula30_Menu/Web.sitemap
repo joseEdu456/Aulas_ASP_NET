@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="" title=""  description="">
+    <siteMapNode url="" title="Roupas Masculinas"  description="">
+      <siteMapNode url="" title="Camisetas"  description="" />
+      <siteMapNode url="" title="Camisas"  description="" />
+      <siteMapNode url="" title="Moletons"  description="" />
+      <siteMapNode url="" title="Tênis"  description="" />
+    </siteMapNode>
+    <siteMapNode url="" title="Roupas Femininas"  description="">
+      <siteMapNode url="" title="Camisetas"  description="" />
+      <siteMapNode url="" title="Camisas"  description="" />
+      <siteMapNode url="" title="Moletons"  description="" />
+      <siteMapNode url="" title="Tênis"  description="" />
+    </siteMapNode>
+  </siteMapNode>
+  
+</siteMap>

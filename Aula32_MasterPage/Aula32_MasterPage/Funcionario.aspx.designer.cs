@@ -40,13 +40,13 @@ namespace Aula32_MasterPage {
         protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// Controle TextBox2.
+        /// Controle TextBox3.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox TextBox3;
         
         /// <summary>
         /// Controle Label3.
@@ -58,12 +58,12 @@ namespace Aula32_MasterPage {
         protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
-        /// Controle TextBox3.
+        /// Controle TextBox2.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox3;
+        protected global::System.Web.UI.WebControls.TextBox TextBox2;
     }
 }

@@ -24,6 +24,7 @@
             <asp:Button ID="btnCadastra" runat="server" Text="Cadastrar" OnClick="btnCadastra_Click" />
             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataKeyNames="Id" DataSourceID="SqlDataSource1Cliente">
                 <Columns>
+                    <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
                     <asp:BoundField DataField="Id" HeaderText="Id" InsertVisible="False" ReadOnly="True" SortExpression="Id">
                     <HeaderStyle BackColor="#000066" />
                     </asp:BoundField>
@@ -47,7 +48,22 @@
                 <SortedDescendingCellStyle BackColor="#F6F0C0" />
                 <SortedDescendingHeaderStyle BackColor="#7E0000" />
             </asp:GridView>
-            <asp:SqlDataSource ID="SqlDataSource1Cliente" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [Id], [nome], [salario], [funcao] FROM [Funcionarios]"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSource1Cliente" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [Id], [nome], [salario], [funcao] FROM [Funcionarios]" DeleteCommand="DELETE FROM [Funcionarios] WHERE [Id] = @Id" InsertCommand="INSERT INTO [Funcionarios] ([nome], [salario], [funcao]) VALUES (@nome, @salario, @funcao)" UpdateCommand="UPDATE [Funcionarios] SET [nome] = @nome, [salario] = @salario, [funcao] = @funcao WHERE [Id] = @Id">
+                <DeleteParameters>
+                    <asp:Parameter Name="Id" Type="Int32" />
+                </DeleteParameters>
+                <InsertParameters>
+                    <asp:Parameter Name="nome" Type="String" />
+                    <asp:Parameter Name="salario" Type="Decimal" />
+                    <asp:Parameter Name="funcao" Type="String" />
+                </InsertParameters>
+                <UpdateParameters>
+                    <asp:Parameter Name="nome" Type="String" />
+                    <asp:Parameter Name="salario" Type="Decimal" />
+                    <asp:Parameter Name="funcao" Type="String" />
+                    <asp:Parameter Name="Id" Type="Int32" />
+                </UpdateParameters>
+            </asp:SqlDataSource>
         </div>
     </form>
 </body>

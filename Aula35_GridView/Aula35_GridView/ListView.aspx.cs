@@ -13,5 +13,10 @@ namespace Aula35_GridView
         {
 
         }
+
+        protected void btnCadastra_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

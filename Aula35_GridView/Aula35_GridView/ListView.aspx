@@ -10,6 +10,18 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            <asp:Label ID="Label1" runat="server" Text="Nome"></asp:Label>
+            <br />
+            <asp:TextBox ID="txtNome" runat="server"></asp:TextBox>
+            <br />
+            <asp:Label ID="txtSalario" runat="server" Text="Salario"></asp:Label>
+            <br />
+            <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+            <br />
+            <asp:Label ID="txtFuncao" runat="server" Text="Funcao"></asp:Label>
+            <br />
+            <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+            <asp:Button ID="btnCadastra" runat="server" OnClick="btnCadastra_Click" Text="Cadastrar" />
             <asp:ListView ID="ListView1" runat="server" DataKeyNames="Id" DataSourceID="SqlDataSourceCliente" InsertItemPosition="LastItem">
                 <AlternatingItemTemplate>
                     <tr style="background-color:#FFF8DC;">
@@ -145,7 +157,7 @@
                     </tr>
                 </SelectedItemTemplate>
             </asp:ListView>
-            <asp:SqlDataSource ID="SqlDataSourceCliente" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [Funcionarios] WHERE [Id] = @Id" InsertCommand="INSERT INTO [Funcionarios] ([nome], [salario], [funcao]) VALUES (@nome, @salario, @funcao)" SelectCommand="SELECT [Id], [nome], [salario], [funcao] FROM [Funcionarios]" UpdateCommand="UPDATE [Funcionarios] SET [nome] = @nome, [salario] = @salario, [funcao] = @funcao WHERE [Id] = @Id">
+            <asp:SqlDataSource ID="SqlDataSourceCliente" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [Id], [nome], [salario], [funcao] FROM [Funcionarios]" DeleteCommand="DELETE FROM [Funcionarios] WHERE [Id] = @Id" InsertCommand="INSERT INTO [Funcionarios] ([nome], [salario], [funcao]) VALUES (@nome, @salario, @funcao)" UpdateCommand="UPDATE [Funcionarios] SET [nome] = @nome, [salario] = @salario, [funcao] = @funcao WHERE [Id] = @Id">
                 <DeleteParameters>
                     <asp:Parameter Name="Id" Type="Int32" />
                 </DeleteParameters>
@@ -161,6 +173,34 @@
                     <asp:Parameter Name="Id" Type="Int32" />
                 </UpdateParameters>
             </asp:SqlDataSource>
+            <br />
+            <asp:DataList ID="DataList1" runat="server" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" DataKeyField="Id" DataSourceID="SqlDataSourceCliente" ForeColor="Black">
+                <AlternatingItemStyle BackColor="PaleGoldenrod" />
+                <FooterStyle BackColor="Tan" />
+                <HeaderStyle BackColor="Tan" Font-Bold="True" />
+                <ItemTemplate>
+                    Id:
+                    <asp:Label ID="IdLabel" runat="server" Text='<%# Eval("Id") %>' />
+                    &nbsp;nome:
+                    <asp:Label ID="nomeLabel" runat="server" Text='<%# Eval("nome") %>' />
+                    &nbsp;salario:
+                    <asp:Label ID="salarioLabel" runat="server" Text='<%# Eval("salario") %>' />
+                    &nbsp;funcao:
+                    <asp:Label ID="funcaoLabel" runat="server" Text='<%# Eval("funcao") %>' />
+                    <br />
+<br />
+                </ItemTemplate>
+                <SelectedItemStyle BackColor="DarkSlateBlue" ForeColor="GhostWhite" />
+            </asp:DataList>
+            <br />
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="SqlDataSourceCliente" Height="173px" Width="285px">
+                <Columns>
+                    <asp:BoundField DataField="Id" HeaderText="Id" InsertVisible="False" ReadOnly="True" SortExpression="Id" />
+                    <asp:BoundField DataField="nome" HeaderText="nome" SortExpression="nome" />
+                    <asp:BoundField DataField="salario" HeaderText="salario" SortExpression="salario" />
+                    <asp:BoundField DataField="funcao" HeaderText="funcao" SortExpression="funcao" />
+                </Columns>
+            </asp:GridView>
         </div>
     </form>
 </body>
